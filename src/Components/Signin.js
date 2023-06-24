@@ -27,7 +27,7 @@ const Signin = () => {
 
 
     return(
-        <div className="w-screen h-screen flex max-w-[1440px] m-auto max-[1000px]:flex-col "   >
+        <div className="w-full h-screen flex max-w-[1440px] m-auto max-[1000px]:flex-col max-[640px]:h-fit "   >
             <div className="LEFT bg-black  w-[40.83%]  flex justify-center items-center max-[1000px]:hidden " >
                 <h1 className=" text-white text-[72px] font-[700] " >Board.</h1>
             </div>
