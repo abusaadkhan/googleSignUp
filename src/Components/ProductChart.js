@@ -4,7 +4,7 @@ import { PieChart, Pie, Cell } from 'recharts'
 
 const ProductChart = ({topProductsData}) => {
     return(
-        <div>
+        
         <PieChart width={730} height={250} margin={{ top: -100, right: 550, bottom: 0, left: 0 }} >
             <Pie data={topProductsData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={70} fill="#8884d8" >
                 {
@@ -16,7 +16,7 @@ const ProductChart = ({topProductsData}) => {
             </Pie>
             
         </PieChart>
-        </div>
+        
     )
 }
 

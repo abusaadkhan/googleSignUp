@@ -38,8 +38,8 @@ const ActivityChart = () => {
 
 
     return(
-        <ResponsiveContainer width="100%">
-            <LineChart  width={800} height={280} data={datanew} margin={{ top: 0, right: 0, left: -20, bottom: 60 }}>
+        <ResponsiveContainer width="100%"  >
+            <LineChart width="100%" height="100%" data={datanew} margin={{ top: 0, right: 0, left: -20, bottom: 25 }}>
                 <CartesianGrid vertical={false}/>
                 <XAxis dataKey="week" axisLine={false} tickLine={false} />
                 <YAxis tickCount={6} axisLine={false} tickLine={false} ticks={[0,100,200,300,400,500]} />
@@ -57,7 +57,7 @@ export default ActivityChart
 
 
 
-
+// import React from "react";
 // import {
 //   LineChart,
 //   Line,
@@ -65,8 +65,7 @@ export default ActivityChart
 //   YAxis,
 //   CartesianGrid,
 //   Tooltip,
-//   Legend,
-//   ResponsiveContainer
+//   Legend
 // } from "recharts";
 
 // const data = [
@@ -116,17 +115,30 @@ export default ActivityChart
 
 // export default function ActivityChart() {
 //   return (
-    
-//         <LineChart width={500} height={300} data={data} margin={{top: 5,right: 30,left: 20,bottom: 5}}>
-//             <CartesianGrid strokeDasharray="3 3" />
-//             <XAxis dataKey="name" />
-//             <YAxis />
-//             <Tooltip />
-//             <Legend />
-//             <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }}/>
-//             <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-//         </LineChart>
-    
+//     <LineChart
+//       width={500}
+//       height={300}
+//       data={data}
+//       margin={{
+//         top: 5,
+//         right: 30,
+//         left: 20,
+//         bottom: 5
+//       }}
+//     >
+//       <CartesianGrid strokeDasharray="3 3" />
+//       <XAxis dataKey="name" />
+//       <YAxis />
+//       <Tooltip />
+//       <Legend />
+//       <Line
+//         type="monotone"
+//         dataKey="pv"
+//         stroke="#8884d8"
+//         activeDot={{ r: 8 }}
+//       />
+//       <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+//     </LineChart>
 //   );
 // }
 
