@@ -127,9 +127,10 @@ const Dashboard = () => {
             <div className="LEFT640  w-full mb-[40px] flex flex-col justify-between text-white bg-black p-4 min-[640px]:hidden" >
                 <div className="flex justify-between w-full mb-2" >   
                     <h1 className="text-lg font-bold " >Board.</h1>
-                    <h2>&#8801;</h2>
+                    <button onClick={()=>setBtnClicked(prev=>!prev)} >&#8801;</button>{console.log("btn value",btnClicked)}
                 </div>
-                <div className="w-full flex flex-col items-end" > 
+                {btnClicked && (
+                    <div className="w-full flex flex-col items-end" > 
                     <ul className=" flex flex-col  gap-2" >
                     <li className="flex justify-start items-center " >
                         <img src={dash} alt="" className="mr-[8%]" />
@@ -151,9 +152,12 @@ const Dashboard = () => {
                         <img src={setting} alt="" className="mr-[8%]"/>
                         <h3>Settings</h3>
                     </li>
+                    <li><div className="text-[14px]" >Help</div></li>
+                    <li><div className="text-[14px]">Contact Us</div></li>
                     
                     </ul>
                 </div>
+                )}
             </div>
 
             <div className="RIGHT  w-[69.44%] h-[92.18%] flex flex-col justify-between max-[1000px]:w-full  ">
