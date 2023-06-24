@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dash from '../asset/dashboard_icon.png'
 import bell from '../asset/bell.png'
 import searchIcon from '../asset/Search icon.png'
@@ -25,6 +25,8 @@ const Dashboard = () => {
     const name = localStorage.getItem('name')
     const email = localStorage.getItem('email')
     const profilePic = localStorage.getItem('profilePic')
+
+    const [btnClicked,setBtnClicked] = useState(false)
 
     const topProductsData = [
         {
@@ -89,7 +91,7 @@ const Dashboard = () => {
             </div>
 
 
-            <div className="LEFT flex justify-between items-center gap-2 w-full bg-black py-5 px-5 text-white mb-[40px] max-[768px]:flex-col max-[768px]:items-start min-[1000px]:hidden" >
+            <div className="LEFT768 flex justify-between items-center gap-2 w-full bg-black py-5 px-5 text-white mb-[40px] max-[768px]:flex-col max-[768px]:items-start min-[1000px]:hidden max-[640px]:hidden" >
                 <div className="flex flex-col" > 
                     <h1 className="text-lg font-bold " >Board.</h1>
                     <ul className="w-full flex gap-[10%]" >
@@ -122,6 +124,38 @@ const Dashboard = () => {
                 </div>
             </div>
 
+            <div className="LEFT640  w-full mb-[40px] flex flex-col justify-between text-white bg-black p-4 min-[640px]:hidden" >
+                <div className="flex justify-between w-full mb-2" >   
+                    <h1 className="text-lg font-bold " >Board.</h1>
+                    <h2>&#8801;</h2>
+                </div>
+                <div className="w-full flex flex-col items-end" > 
+                    <ul className=" flex flex-col  gap-2" >
+                    <li className="flex justify-start items-center " >
+                        <img src={dash} alt="" className="mr-[8%]" />
+                        <h3>Dashboard</h3>
+                    </li>
+                    <li className="flex justify-start items-center " >
+                        <img src={leftTransaction} alt="" className="mr-[8%]"/>
+                        <h3>Transactions</h3>
+                    </li>
+                    <li className="flex justify-start items-center " >
+                        <img src={schedule} alt="" className="mr-[8%]"/>
+                        <h3>Schedules</h3>
+                    </li>
+                    <li className="flex justify-start items-center" >
+                        <img src={leftUser} alt="" className="mr-[8%]"/>
+                        <h3>Users</h3>
+                    </li>
+                    <li className="flex justify-start items-center " >
+                        <img src={setting} alt="" className="mr-[8%]"/>
+                        <h3>Settings</h3>
+                    </li>
+                    
+                    </ul>
+                </div>
+            </div>
+
             <div className="RIGHT  w-[69.44%] h-[92.18%] flex flex-col justify-between max-[1000px]:w-full  ">
 
                 <div className="Dashboard flex justify-between items-center w-full h-[29px] mb-[40px]  max-[480px]:flex-col max-[480px]:h-fit max-[480px]:gap-[10px] max-[480px]:items-start  ">
@@ -137,28 +171,28 @@ const Dashboard = () => {
                 </div>
 
                 <div className="FOURCARDS w-full h-[12.71%] flex flex-wrap justify-between mb-[40px] max-[768px]:gap-[20px] " >
-                    <div className="bg-[#DDEFE0] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%]">
+                    <div className="bg-[#DDEFE0] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%] max-[640px]:w-full">
                         <img className="ml-[76.45%]" src={camera} alt="" />
                         <div>
                             <h1 className="text-[14px]" >Total Revenues</h1>
                             <h1 className="text-[24px] font-[700]">$2,129,430</h1>
                         </div>
                     </div>
-                    <div className="bg-[#F4ECDD] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%]">
+                    <div className="bg-[#F4ECDD] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%] max-[640px]:w-full">
                         <img className="ml-[76.45%]" src={totalTransaction} alt="" />
                         <div>
                             <h1 className="text-[14px]" >Total Transactions</h1>
                             <h1 className="text-[24px] font-[700]">1,520</h1>
                         </div>
                     </div>
-                    <div className="bg-[#EFDADA] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%]">
+                    <div className="bg-[#EFDADA] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%] max-[640px]:w-full">
                         <img className="ml-[76.45%]" src={likes} alt="" />
                         <div>
                             <h1 className="text-[14px]" >Total Likes</h1>
                             <h1 className="text-[24px] font-[700]">9,721</h1>
                         </div>
                     </div>
-                    <div className="bg-[#DEE0EF] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%]">
+                    <div className="bg-[#DEE0EF] w-[22.105%] h-full py-[20px] px-[25px] rounded-[20px] max-[768px]:w-[45%] max-[640px]:w-full">
                         <img className="ml-[76.45%]" src={users} alt="" />
                         <div>
                             <h1 className="text-[14px]" >Total Users</h1>
