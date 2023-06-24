@@ -91,7 +91,7 @@ const Dashboard = () => {
             </div>
 
 
-            <div className="LEFT768 flex justify-between items-center gap-2 w-full bg-black py-5 px-5 text-white mb-[40px] max-[768px]:flex-col max-[768px]:items-start min-[1000px]:hidden max-[640px]:hidden" >
+            <div className="LEFT768 flex justify-between items-center  gap-2 w-full bg-black py-5 px-5 text-white mb-[40px] max-[768px]:flex-col max-[768px]:items-start min-[1000px]:hidden max-[640px]:hidden" >
                 <div className="flex flex-col" > 
                     <h1 className="text-lg font-bold " >Board.</h1>
                     <ul className="w-full flex gap-[10%]" >
@@ -124,13 +124,13 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className="LEFT640  w-full mb-[40px] flex flex-col justify-between text-white bg-black p-4 min-[640px]:hidden" >
+            <div className="LEFT640 ease-in  w-full mb-[40px] flex flex-col justify-between text-white bg-black p-4 min-[640px]:hidden" >
                 <div className="flex justify-between w-full mb-2" >   
                     <h1 className="text-lg font-bold " >Board.</h1>
                     <button onClick={()=>setBtnClicked(prev=>!prev)} >&#8801;</button>{console.log("btn value",btnClicked)}
                 </div>
                 {btnClicked && (
-                    <div className="w-full flex flex-col items-end" > 
+                    <div className="w-full flex flex-col items-end ease-in" > 
                     <ul className=" flex flex-col  gap-2" >
                     <li className="flex justify-start items-center " >
                         <img src={dash} alt="" className="mr-[8%]" />
@@ -226,9 +226,9 @@ const Dashboard = () => {
                             <h1 className="text-[18px] font-[700]" >Top products</h1>
                             <div className="flex items-center gap-[6px]" ><h1 className="text-[12px] text-[#858585]" >May - June 2021</h1><img className="w-[8px] " src={downArrow} alt="" /></div>
                         </div>
-                        <div className="w-full box-border  flex max-[768px]:gap-[20%] max-[480px]:gap-0  " >
-                            <div className="w-[145.94px] h-[145.94px]  mr-[43.7px] "><ProductChart topProductsData={topProductsData}/> </div>
-                            <div className="flex flex-col justify-between" >
+                        <div className="w-full box-border  flex max-[768px]:gap-[20%] max-[480px]:flex-col max-[480px]:gap-4  " >
+                            <div className="w-[145.94px] h-[145.94px]  mr-[43.7px] max-[480px]:w-full max-[480px]:pl-[13%] "><ProductChart  topProductsData={topProductsData}/> </div>
+                            <div className="flex flex-col justify-between max-[480px]:w-full" >
                                 
                                {
                                 topProductsData.map((pro,index)=>{
